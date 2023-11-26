@@ -5,6 +5,7 @@ import 'package:store_app/viewmodel/store_cubit/store_cubit.dart';
 import 'package:store_app/viewmodel/store_cubit/store_state.dart';
 
 import '../../classes/customPaint.dart';
+import 'firstpage.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -161,8 +162,7 @@ class LoginScreen extends StatelessWidget {
                               backgroundColor:
                               Colors.blueGrey.shade800),
                           onPressed: () {
-                            // cubit.data();
-                            // cubit.loginUser();
+                          cubit.checkLogin();
                           },
                           child: Text(
                               "Login",
@@ -202,7 +202,9 @@ class LoginScreen extends StatelessWidget {
         ),
       );
     }, listener: (context, state) {
-
-    });
+      if (state is DataSuccess) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => FirstPage()));
+      }});
   }
 }

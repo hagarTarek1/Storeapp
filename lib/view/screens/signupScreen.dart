@@ -159,8 +159,7 @@ class SignupScreen extends StatelessWidget {
                               backgroundColor:
                               Colors.blueGrey.shade800),
                           onPressed: () {
-                            // cubit.data();
-                            // cubit.loginUser();
+
                           },
                           child: Text(
                               "SignUp",
